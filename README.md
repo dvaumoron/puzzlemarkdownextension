@@ -1,2 +1,3 @@
 # puzzlemarkdownextension
-goldmark extension used in puzzle ecosystem 
+
+[goldmark](https://github.com/yuin/goldmark) extension used in puzzle ecosystem
