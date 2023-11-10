@@ -26,6 +26,7 @@ import (
 )
 
 func NewDefaultEngine() goldmark.Markdown {
+	// TODO profile link
 	return goldmark.New(
 		goldmark.WithExtensions(extension.GFM, wikilink.Extension),
 		goldmark.WithRendererOptions(html.WithHardWraps()),
