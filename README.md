@@ -9,3 +9,6 @@
     - "[[ path/to/wiki#pageName ]]" became \<wiki-link wiki="path/to/wiki" title="pageName">pageName\</wiki-link>
     - "[[ path/to/wiki#langTag/pageName ]]" became \<wiki-link wiki="path/to/wiki" lang="langTag" title="pageName">pageName\</wiki-link>
     - And so on...
+
+2. profile link (also targeting a WebComponent) :
+    - "@[userLogin]" became \<profile-link login="userLogin">\</profile-link>

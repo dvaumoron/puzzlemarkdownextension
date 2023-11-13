@@ -30,14 +30,16 @@ import (
 	"github.com/yuin/goldmark/util"
 )
 
-const openStr = "[["
-const openLen = len(openStr)
-const hash = '#'
-const slash = '/'
-const pipe = '|'
-const closeStr = "]]"
-const closeLen = len(closeStr)
-const priority = 150
+const (
+	openStr  = "[["
+	openLen  = len(openStr)
+	hash     = '#'
+	slash    = '/'
+	pipe     = '|'
+	closeStr = "]]"
+	closeLen = len(closeStr)
+	priority = 150
+)
 
 // Manage WikiLink targeting a custom WebComponent "wiki-link" :
 //   - "[[ pageName ]]" became <wiki-link title="pageName">pageName</wiki-link>
@@ -50,13 +52,15 @@ const priority = 150
 var Extension goldmark.Extender = wikiLinkExtender{}
 var Kind = ast.NewNodeKind("WikiLink")
 
-// check matching with interface
-var _ parser.InlineParser = wikiLinkParser{}
-var _ renderer.NodeRenderer = wikiLinkRenderer{}
+var (
+	// check matching with interface
+	_ parser.InlineParser   = wikiLinkParser{}
+	_ renderer.NodeRenderer = wikiLinkRenderer{}
 
-var start = []byte{'['}
-var open = []byte(openStr)
-var close = []byte(closeStr)
+	start = []byte{'['}
+	open  = []byte(openStr)
+	close = []byte(closeStr)
+)
 
 type wikiLinkNode struct {
 	ast.BaseInline

@@ -19,6 +19,7 @@
 package puzzlemarkdownextension
 
 import (
+	"github.com/dvaumoron/puzzlemarkdownextension/profilelink"
 	"github.com/dvaumoron/puzzlemarkdownextension/wikilink"
 	"github.com/yuin/goldmark"
 	"github.com/yuin/goldmark/extension"
@@ -26,9 +27,8 @@ import (
 )
 
 func NewDefaultEngine() goldmark.Markdown {
-	// TODO profile link
 	return goldmark.New(
-		goldmark.WithExtensions(extension.GFM, wikilink.Extension),
+		goldmark.WithExtensions(extension.GFM, wikilink.Extension, profilelink.Extension),
 		goldmark.WithRendererOptions(html.WithHardWraps()),
 	)
 }
